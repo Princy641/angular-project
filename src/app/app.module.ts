@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ListPageComponent } from './list-page/list-page.component';
 import { AddPageComponent } from './add-page/add-page.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import { EditPageComponent } from './edit-page/edit-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

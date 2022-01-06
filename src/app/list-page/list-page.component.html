@@ -1,1 +1,29 @@
-<p>list-page works!</p>
+<div class="padd"></div>
+<h4>List of Products</h4>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <td>Product Id</td>
+      <td>Product Name</td>
+      <td>Description</td>
+      <td>Release Date</td>
+      <td>Price</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of products"> 
+      <td>{{item.productId}}</td>
+      <td>{{item.productName}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.releaseDate | date}}</td>
+      <td>{{item.price | currency}}</td>
+      <td>
+        <button class="btn btn-primary btn-sm me-2">Edit</button>
+        <button class= "btn btn-danger btn-sm">Delete</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
