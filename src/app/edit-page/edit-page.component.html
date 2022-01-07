@@ -1,4 +1,30 @@
-<div class="padd"><p>edit-page works!</p>
-</div>
-
+<div class="padd"></div>
+<h5>Editing Product with # {{currentProductId}}</h5>
+<form [formGroup]="userForm">
+    <div class="mb-3">
+      <label class="form-label"><b>Product Name</b></label>
+      <input type="text" class="form-control" formControlName="productName">
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><b>Description</b></label>
+      <input type="text" class="form-control" formControlName="description">
+    </div>
+    <div class="mb-3 ">
+        <label class="form-label" ><b>Release Date</b></label>
+        <input type="date" class="form-control" formControlName="releaseDate" >
+    </div>
+    <div class="mb-3">
+        <label  class="form-label"><b>Price</b></label>
+        <input type="text" class="form-control" formControlName="price" >
+    </div>
+    <div class="mb-3">
+        <label class="form-label"> <b>Rating</b></label>
+        <input type="text" class="form-control" formControlName="rating">
+    </div>
+    <div class="mb-3">
+        <label class="form-label"><b>Image URL</b></label>
+        <input type="text" class="form-control" formControlName="imageUrl">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="update()" >Update</button>
+  </form>
 

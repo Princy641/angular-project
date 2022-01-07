@@ -16,13 +16,12 @@ export class AddPageComponent implements OnInit {
     private router: Router){}
   ngOnInit(){
     this.userForm = this._formBilder.group({
-      productName:[' ',[Validators.required]],
-      description:[' ',[Validators.required]],
-      releaseDate:[' ',[Validators.required]],
-      price:[' ',[Validators.required]],
-      rating:[' ',[Validators.required]],
-      imageUrl:[' ',[Validators.required]]
-        
+      productName:['',[Validators.required]],
+      description:['',[Validators.required]],
+      releaseDate:['',[Validators.required]],
+      price:['',[Validators.required]],
+      rating:['',[Validators.required]],
+      imageUrl:['',[Validators.required]]
       })
       
     }

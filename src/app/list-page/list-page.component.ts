@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-page',
@@ -8,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListPageComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private act:ActivatedRoute,
+    private router:Router) { }
   products:any  = [];
   ngOnInit(): void {
     this.http.get('http://testapi.techriff.in/api/open/products').subscribe(data=>{
@@ -16,6 +19,18 @@ export class ListPageComponent implements OnInit {
     this.products = data;
    })
 
+  }
+  delete(productId:any){
+    this.http.delete('http://testapi.techriff.in/api/open/products').subscribe(data=>{
+      
+      
+    })
+    console.log(productId)
+    
+  }
+
+  edit(productId:any): void{
+    this.router.navigate(['/Edit',productId]);
   }
 
 }

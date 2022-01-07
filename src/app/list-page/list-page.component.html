@@ -9,6 +9,7 @@
       <td>Description</td>
       <td>Release Date</td>
       <td>Price</td>
+
       <td>Action</td>
     </tr>
   </thead>
@@ -20,8 +21,8 @@
       <td>{{item.releaseDate | date}}</td>
       <td>{{item.price | currency}}</td>
       <td>
-        <button class="btn btn-primary btn-sm me-2">Edit</button>
-        <button class= "btn btn-danger btn-sm">Delete</button>
+        <button class="btn btn-primary btn-sm me-2" (click)="edit(item.productId)" >Edit</button>
+        <button class= "btn btn-danger btn-sm" (click)="delete(item.productId)">Delete</button>
 
       </td>
     </tr>
