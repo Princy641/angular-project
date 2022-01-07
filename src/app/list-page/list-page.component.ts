@@ -21,12 +21,12 @@ export class ListPageComponent implements OnInit {
 
   }
   delete(productId:any){
-    this.http.delete('http://testapi.techriff.in/api/open/products').subscribe(data=>{
-      
-      
+    this.http.delete('http://testapi.techriff.in/api/open/products/'+productId)
+    .subscribe(data=>{
+      console.log("Deleted",data);  
+      //remove from table row
+      this.products = this.products.filter((x:any)=>x.productId!=productId)
     })
-    console.log(productId)
-    
   }
 
   edit(productId:any): void{
