@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./list-page.component.css']
 })
 export class ListPageComponent implements OnInit {
+  //public deletepopup=false;
 
   constructor(private http: HttpClient,
     private act:ActivatedRoute,
@@ -18,9 +19,10 @@ export class ListPageComponent implements OnInit {
     console.log(data)
     this.products = data;
    })
-
+  
   }
   delete(productId:any){
+    //this.deletepopup=true;
     this.http.delete('http://testapi.techriff.in/api/open/products/'+productId)
     .subscribe(data=>{
       console.log("Deleted",data);  
@@ -32,5 +34,9 @@ export class ListPageComponent implements OnInit {
   edit(productId:any): void{
     this.router.navigate(['/Edit',productId]);
   }
+  handleDenial(){
+    console.log("Cancel");
+  }
+  }
 
-}
+

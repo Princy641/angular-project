@@ -1,7 +1,7 @@
 <div class="padd"></div>
 <h4>List of Products</h4>
 <hr>
-<table class="table">
+<table class="table" *ngIf="products && products.length">
   <thead>
     <tr>
       <td>Product Id</td>
@@ -22,9 +22,21 @@
       <td>{{item.price | currency}}</td>
       <td>
         <button class="btn btn-primary btn-sm me-2" (click)="edit(item.productId)" >Edit</button>
-        <button class= "btn btn-danger btn-sm" (click)="delete(item.productId)">Delete</button>
-
+        <!-- <button class= "btn btn-danger btn-sm" (click)="delete(item.productId)">Delete</button> -->
+        <button class="btn btn-sm btn-danger"
+        [swal]="{ title: 'Delete Product', text: 'Are you sure you want to delete this?', showDenyButton: true, denyButtonText: 'Don\'t Delete'}"
+        (confirm)="delete(item.productId)"
+        (deny)="handleDenial()">
+      
+        Delete
+      </button>
       </td>
     </tr>
   </tbody>
 </table>
+<button routerLink="/Add" class="btn btn-primary btn-default"> Go To Add</button>
+
+
+<div class="alert alert-info" *ngIf="products == null || products.length == 0">
+  <h3>There is no product to show.</h3>
+</div>

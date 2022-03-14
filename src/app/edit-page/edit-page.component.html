@@ -1,26 +1,52 @@
 <div class="padd"></div>
 <h5>Editing Product with # {{currentProductId}}</h5>
 <form [formGroup]="userForm">
-    <div class="mb-3">
+  <!-- <div class="mb-3">
       <label class="form-label"><b>Product Name</b></label>
       <input type="text" class="form-control" formControlName="productName">
+      <div *ngIf="userForm.controls['productName'].hasError('required')" class="alert alert-danger">
+        Please enter Product Name
+  </div>
+  </div>  -->
+  <div class="mb-3">
+    <label class="form-label"><b>Product Name</b></label>
+    <input type="text" class="form-control" formControlName="productName">
+    <div *ngIf="userForm.controls['productName'].hasError('required')" class="alert alert-danger">
+      Please enter Product Name
+    </div>
+
+
     </div>
     <div class="mb-3">
       <label class="form-label"><b>Description</b></label>
       <input type="text" class="form-control" formControlName="description">
+      <div *ngIf="userForm.controls['description'].hasError('required')" class="alert alert-danger">
+        Please enter description
+      </div>
+
     </div>
+
     <div class="mb-3 ">
         <label class="form-label" ><b>Release Date</b></label>
         <input type="date" class="form-control" formControlName="releaseDate" >
+        <div *ngIf="userForm.controls['releaseDate'].hasError('required')" class="alert alert-danger">
+        </div>
     </div>
+
     <div class="mb-3">
         <label  class="form-label"><b>Price</b></label>
         <input type="text" class="form-control" formControlName="price" >
+        <div *ngIf="userForm.controls['price'].hasError('required')" class="alert alert-danger">
+        </div>
     </div>
+
     <div class="mb-3">
         <label class="form-label"> <b>Rating</b></label>
         <input type="text" class="form-control" formControlName="rating">
+        <div *ngIf="userForm.controls['rating'].hasError('required')" class="alert alert-danger">
+        </div>
     </div>
+
     <div class="mb-3">
         <label class="form-label"><b>Image URL</b></label>
         <input type="text" class="form-control" formControlName="imageUrl">

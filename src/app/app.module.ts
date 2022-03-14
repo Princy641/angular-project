@@ -9,6 +9,10 @@ import { EditPageComponent } from './edit-page/edit-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+
 
 @NgModule({
   declarations: [
@@ -21,8 +25,9 @@ import { DatePipe } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
-
+    NgHttpLoaderModule.forRoot(), // angular loader use
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

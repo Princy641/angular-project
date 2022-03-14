@@ -5,17 +5,36 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    display: inline;
+    height: 80%;
+    margin: 10%;
+    border: black;
   }
   input[type=text], select,input[type=date] {
     width: 100%;
-    padding: 15px 20px;
+    padding: 5px;
     margin: 15px 15px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+.coll{
+  display: flex;
+
+}  
+  .Roww{
+    width: 40%;
+    margin: 5px 30px;
+  }
+
+  .alert {
+    position: relative;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    margin-left: 15px;
+}
   
   
   

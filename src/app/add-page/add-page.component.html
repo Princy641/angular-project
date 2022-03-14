@@ -1,56 +1,67 @@
 <div class="padd"></div>
-
-
-
 <div class="form">
-          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-        <div>
-          <label> <b>ProductName</b> </label>
-          <input type="text" formControlName="productName">
-          <div *ngIf="userForm.controls['productName'].hasError('required')" class="alert alert-danger">
-              Please enter ProductName
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="coll">
+      <div class="Roww">
+        <label> <b>ProductName</b> </label>
+        <input type="text" formControlName="productName">
+        <div *ngIf="userForm.controls['productName'].hasError('required')" class="alert alert-danger">
+        Please enter ProductName
+        </div>
+      </div>
 
-          </div>
-        </div>
-        <div>
-          <label> <b>Description</b></label>
-          <input type="text" formControlName="description">
-          <div *ngIf="userForm.controls['description'].hasError('required')" class="alert alert-danger">
-            Please enter description
-          </div>
-        </div>
-        <div>
-          <label> <b>ReleaseDate</b></label>
-          <input type="date" formControlName="releaseDate">
-          <div *ngIf="userForm.controls['releaseDate'].hasError('required')" class="alert alert-danger">
-          </div>
-       
-        </div>
-        <div>
-            <label> <b>Price</b></label>
-            <input type="text" formControlName="price">
-            <div *ngIf="userForm.controls['price'].hasError('required')" class="alert alert-danger">
-            </div>
-           
-          </div>
-        <div>
-        <div>
-          <label> <b>Rating</b></label>
-          <input type="text" formControlName="rating">
-          <div *ngIf="userForm.controls['rating'].hasError('required')" class="alert alert-danger">
-          </div>
-       
-        </div>
-        <div>
-            <label> <b>ImageUrl</b></label>
-            <input type="text" formControlName="imageUrl">
-            <div *ngIf="userForm.controls['imageUrl'].hasError('required')" class="alert alert-danger">
-            
-            </div>
-           
-          </div>
-    
-          <button type="submit" [disabled] ="!userForm.valid" class="btn btn-success">Add</button>
-        </div>
-      </form>
-    
+
+    <div class="Roww">
+      <label> <b>Description</b></label>
+      <input type="text" formControlName="description">
+      <div *ngIf="userForm.controls['description'].hasError('required')" class="alert alert-danger">
+        Please enter description
+      </div>
+    </div>
+
+  </div>  
+  <div class="coll">  
+    <div class="Roww">
+      <label> <b>ReleaseDate</b></label>
+      <input type="date" formControlName="releaseDate">
+      <div *ngIf="userForm.controls['releaseDate'].hasError('required')" class="alert alert-danger">
+        Please enter the Release Date
+
+      </div>
+    </div>
+    <div class="Roww">
+      <label> <b>Price</b></label>
+      <input type="text" formControlName="price">
+      <div *ngIf="userForm.controls['price'].hasError('required')" class="alert alert-danger">
+      Please enter the Price
+      </div>
+   
+    </div>
+  </div>
+  <div class="coll"> 
+    <div class="Roww">
+      <label> <b>Rating</b></label>
+      <input type="text" formControlName="rating">
+      <div *ngIf="userForm.controls['rating'].hasError('required')" class="alert alert-danger">
+        Please enter the Rating
+
+      </div>
+    </div>
+    <div class="Roww">
+      <label> <b>ImageUrl</b></label>
+      <input type="text" formControlName="imageUrl">
+      <div *ngIf="userForm.controls['imageUrl'].hasError('required')" class="alert alert-danger">
+        Please enter the Image URL
+
+      </div>
+    </div>
+  </div>
+
+    <button type="submit" [disabled] ="!userForm.valid" class="btn btn-success">Add</button>
+  </form>
+</div>
+
+
+
+
+
